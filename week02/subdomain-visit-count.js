@@ -3,6 +3,7 @@
  * @return {string[]}
  * 1、通过hash表统计每个域名的数值
  * 2、遍历hash表得到结果
+ * 时间复杂度: O(n)
  */
 var subdomainVisits = function (cpdomains) {
   const sumHash = {};

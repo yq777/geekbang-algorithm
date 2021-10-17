@@ -3,6 +3,7 @@
  * @return {number}
  * 1、通过hash表记录每个值出现次数和第一次以及最后一次出现的位置
  * 2、遍历hash表得到次数最多的值，通过最后一次出现位置和第一次出现位置计算最小长度
+ * 时间复杂度: O(n)
  */
 var findShortestSubArray = function (nums) {
   const hash = {};
