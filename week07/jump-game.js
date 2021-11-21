@@ -1,19 +1,15 @@
 /**
  * @param {number[]} nums
  * @return {boolean}
- * 贪心算法
- * 循环，判断x+nums[i]最远可达距离是否大于数组长度
  */
 var canJump = function (nums) {
-  let max = 0,
-    length = nums.length;
-  for (let i = 0; i < length; i++) {
-    if (i <= max) {
-      max = Math.max(max, i + nums[i]);
-      if (max >= length - 1) {
-        return true;
-      }
+  let n = nums.length,
+    f = new Array(n).fill(-Infinity);
+  f[0] = nums[0];
+  for (let i = 1; i < n; i++) {
+    if (i <= f[i - 1]) {
+      f[i] = Math.max(f[i - 1], i + nums[i]);
     }
   }
-  return false;
+  return f[n - 1] >= nums[n - 1];
 };
