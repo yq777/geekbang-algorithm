@@ -1,7 +1,7 @@
 /**
  * @param {number} n
  * @return {number}
- * 动态规划
+ * 
  */
 var numSquares = function (n) {
   const f = new Array(n + 1).fill(Infinity);
